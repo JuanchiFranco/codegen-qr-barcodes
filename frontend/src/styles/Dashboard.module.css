@@ -1,0 +1,76 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #e3f2fd; /* Celeste claro */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    color: #0277bd; /* Azul celeste oscuro */
+    border-bottom: 2px solid #039be5;
+    padding-bottom: 5px;
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #81d4fa;
+}
+
+button {
+    background-color: #0288d1; /* Celeste fuerte */
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #01579b; /* Azul oscuro */
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+  
+.list-item {
+    background: #b3e5fc;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.qrContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.actions{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
