@@ -18,45 +18,113 @@ h2, h3 {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    align-items: flex-start; /* Alinear elementos en la parte superior */
 }
 
-input, select, button {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
+.formControl {
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Permite que los elementos se encojan por debajo de su tamaño de contenido */
+}
+
+input, select, .formButton {
+    font-size: 14px;
+    border-radius: 4px;
     border: 1px solid #81d4fa;
+    box-sizing: border-box;
+    height: 38px; /* Altura fija para todos los elementos */
+    margin: 0;
+    padding: 6px 12px;
+    width: 100%;
 }
 
-button {
-    background-color: #0288d1; /* Celeste fuerte */
+/* Estilo específico para el input de texto */
+input[type="text"] {
+    height: 38px;
+}
+
+/* Estilo específico para el select */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 30px;
+}
+
+/* Estilo para el botón */
+.formButton {
+    background-color: #0288d1;
     color: white;
     cursor: pointer;
     border: none;
-    transition: 0.3s;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-button:hover {
-    background-color: #01579b; /* Azul oscuro */
+.formButton:hover {
+    background-color: #01579b;
+}
+
+/* Asegurarse de que los elementos mantengan su ancho proporcional */
+.formControl:first-child {
+    flex: 2; /* El input de texto ocupa más espacio */
+}
+
+.formControl:nth-child(2) {
+    flex: 1; /* El select ocupa menos espacio */
+    max-width: 150px;
+}
+
+.formControl:last-child {
+    flex: 1; /* El botón ocupa un espacio intermedio */
+    max-width: 120px;
 }
 
 .list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     padding: 0;
     list-style: none;
 }
   
+.logoutContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.logoutButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.logoutButton:hover {
+    background-color: #d32f2f;
+}
+
 .list-item {
     background: #b3e5fc;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .qrContainer {
@@ -67,10 +135,46 @@ button:hover {
     background: white;
     border: 1px solid #ddd;
     border-radius: 5px;
+    width: 100%;
+    min-height: 180px;
+    box-sizing: border-box;
 }
 
-.actions{
+.actions {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
+    margin-top: 10px;
+}
+
+.actions > div {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logoButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.logoButton:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+}
+
+.logoButton:nth-child(2) {
+    background-color: #f44336;
+}
+
+.logoButton:nth-child(2):hover {
+    background-color: #d32f2f;
 }
