@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import styles from "../styles/Register.module.css";
+import { useNavigate, Link } from 'react-router-dom';
+import styles from "../styles/Login.module.css";
+import Footer from '../components/Footer';
 
 const Register = () => {
     const [ email, setEmail ] = useState('');
@@ -23,10 +24,10 @@ const Register = () => {
     }
 
     return (
-        <div className={styles.registercontainer}>
-            <div className={styles.registerbox}>
+        <div className={styles.loginContainer}>
+            <div className={styles.loginBox}>
                 <h2>Registrarse</h2>
-                <form onSubmit={handleRegister}>
+                <form className={styles.loginForm} onSubmit={handleRegister}>
                     <input
                         type="email"
                         placeholder="Email"
@@ -41,9 +42,15 @@ const Register = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <button type="submit">Registrarse</button>
+                    <button type="submit" className={styles.loginButton}>
+                        Registrarse
+                    </button>
+                    <Link to="/login" className={styles.loginLink}>
+                        ¿Ya tienes una cuenta? Inicia sesión
+                    </Link>
                 </form>
             </div>
+            <Footer />
         </div>
     );
 };

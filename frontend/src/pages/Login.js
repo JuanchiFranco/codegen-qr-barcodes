@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from "../styles/Login.module.css";
+import Footer from '../components/Footer';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -21,25 +22,33 @@ const Login = () => {
     };
 
     return (
-        <div className={styles.logincontainer}>
-            <div className={styles.loginbox}>
+        <div className={styles.loginContainer}>
+            <div className={styles.loginBox}>
                 <h2>Iniciar Sesión</h2>
-                <form onSubmit={handleLogin}>
+                <form className={styles.loginForm} onSubmit={handleLogin}>
                     <input
                         type="email"
                         placeholder="Email"
+                        value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                     <input
                         type="password"
                         placeholder="Contraseña"
+                        value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <button type="submit">Iniciar sesión</button>
+                    <button type="submit" className={styles.loginButton}>
+                        Iniciar sesión
+                    </button>
+                    <Link to="/register" className={styles.loginLink}>
+                        ¿No tienes una cuenta? Regístrate
+                    </Link>
                 </form>
             </div>
+            <Footer />
         </div>
     );
 };
