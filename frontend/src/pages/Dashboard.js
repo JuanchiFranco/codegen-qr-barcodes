@@ -119,10 +119,6 @@ const Dashboard = () => {
         }
     };
 
-    const handleLogout = () => {
-        navigate('/');
-    };
-
     return (
         <div className={styles.container}>
             <h2>Generar Código</h2>
