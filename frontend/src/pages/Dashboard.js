@@ -6,7 +6,6 @@ import download from 'downloadjs';
 import QRCode from 'react-qr-code';
 import Barcode from 'react-barcode';
 import styles from '../styles/Dashboard.module.css';
-import Footer from '../components/Footer';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -272,8 +271,6 @@ const Dashboard = () => {
                 <div className={styles.logoutContainer}>
                     <button className={styles.logoutButton} onClick={() => navigate('/')}>Cerrar Sesión</button>
                 </div>
-                
-                <Footer />
             </div>
         );
     };
