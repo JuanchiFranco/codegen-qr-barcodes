@@ -147,8 +147,30 @@ const Dashboard = () => {
             <ul className={styles.list}>
                 {history.map((code) => (
                     <li key={code.id} className={styles.listItem}>
-                        <div style={{ marginBottom: '10px' }}>
-                            {code.type === 'QR' ? 'Código QR' : 'Código de Barras'}
+                        <div style={{
+                            textAlign: 'center',
+                            fontSize: '14px',
+                            color: '#333',
+                            width: '200px',
+                            margin: '0 auto 10px',
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            padding: '0 5px'
+                        }}>
+                            {code.type === 'QR' ? (
+                                <a 
+                                    href={code.data.startsWith('http') ? code.data : `https://${code.data}`} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        color: '#0277bd',
+                                        textDecoration: 'none'
+                                    }}
+                                >
+                                    {code.data.length > 30 ? `${code.data.substring(0, 30)}...` : code.data}
+                                </a>
+                            ) : 'Código de Barras'}
                         </div>
                         <div id={`qr-${code.id}`} ref={qrRef} className={styles.qrContainer}>
                             {code.type === 'QR' ? (
